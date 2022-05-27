@@ -1,5 +1,7 @@
 "use strict";
 
+const { listenerCount } = require("@11ty/eleventy/src/Util/AsyncEventEmitter");
+
 /*
 Implementar la clase LinkedList, definiendo los siguientes métodos:
   - add: agrega un nuevo nodo al final de la lista;
@@ -11,9 +13,61 @@ Implementar la clase LinkedList, definiendo los siguientes métodos:
   En caso de que la búsqueda no arroje resultados, search debe retornar null.
 */
 
-function LinkedList() {}
+function LinkedList() {
+  this.head = null;
+}
 
-function Node(value) {}
+function Node(value) {
+  this.value = value;
+  this.next = null;
+}
+
+LinkedList.prototype.add = function (value) {
+  var node = new Node(value);
+  let current = this.head;
+  if (!this.head) {
+    this.head = node;
+    return node;
+  }
+  while (current.next) {
+    current = current.next;
+  }
+  current.next = node;
+  return node;
+};
+
+LinkedList.prototype.remove = function () {
+  var current2 = this.head;
+  if (!current2) return null;
+  if (!current2.next) {
+    var current2 = current2.value;
+    this.head = null;
+    return current2;
+  }
+  while (current2.next.next) {
+    current2 = current2.next;
+  }
+  var result = current2.next.value;
+  current2.next = null;
+  return result;
+};
+
+LinkedList.prototype.search = function (busq) {
+  var current3 = this.head;
+  while (current3) {
+    if (typeof busq === "function") {
+      if (busq(current3.value)) {
+        return current3.value;
+      }
+    } else {
+      if (current3.value === busq) {
+        return busq;
+      }
+    }
+    current3 = current3.next;
+  }
+  return null;
+};
 
 /*
 Implementar la clase HashTable.
@@ -30,7 +84,9 @@ La clase debe tener los siguientes métodos:
 Ejemplo: supongamos que quiero guardar {instructora: 'Ani'} en la tabla. Primero puedo chequear, con hasKey, si ya hay algo en la tabla con el nombre 'instructora'; luego, invocando set('instructora', 'Ani'), se almacenará el par clave-valor en un bucket específico (determinado al hashear la clave)
 */
 
-function HashTable() {}
+function HashTable() {
+  this.arr = new Array(35);
+}
 
 // No modifiquen nada debajo de esta linea
 // --------------------------------
