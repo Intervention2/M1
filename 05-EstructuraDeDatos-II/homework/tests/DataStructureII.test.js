@@ -119,7 +119,7 @@ describe("Una linked list", function () {
   });
 });
 
-xdescribe("HashTable", function () {
+describe("HashTable", function () {
   var hashTable;
 
   beforeEach(function () {
