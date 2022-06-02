@@ -25,13 +25,13 @@
 
 Los árboles son estructuras de datos que consiste en una serie de nodos conectados entre ellos y que se asemeja a un árbol (al revés). Cuando hablemos de árboles vamos a usar la siguiente terminología:
 
-* __Raíz__ - El nodo superior del árbol.
-* __Padre__ - Nodo con hijos.
-* __Hijo__ - Nodo descendiente de otro nodo.
-* __Hermanos__ - Nodos que comparten el mismo padre.
-* __Hojas__ - Nodos sin hijos.
-* __Nivel__ - El nivel de un nodo está definido por el número de conexiones entre el nodo y la raíz.
-* __Camino__ - Una secuencia de nodos por los que tenemos que pasar para llegar de un nodo a otro.
+- **Raíz** - El nodo superior del árbol.
+- **Padre** - Nodo con hijos.
+- **Hijo** - Nodo descendiente de otro nodo.
+- **Hermanos** - Nodos que comparten el mismo padre.
+- **Hojas** - Nodos sin hijos.
+- **Nivel** - El nivel de un nodo está definido por el número de conexiones entre el nodo y la raíz.
+- **Camino** - Una secuencia de nodos por los que tenemos que pasar para llegar de un nodo a otro.
 
 Para que una estructura de nodos sea un árbol tiene que ser dirigido (o sea que se pueda ir de un nodo al hijo, pero no al revés, como en las listas enlazadas), no tiene que tener ciclos ( o sea que no exista un camino para llegar de un nodo al mismo nodo sin pasar dos veces por otro nodo.), tiene que ser conexo, es decir que no haya nodos 'sueltos', y además dos nodos cualesquiera tienen que estar conectados _sólo_ por un único camino.
 
@@ -80,11 +80,11 @@ derecho(i) = 2*i + 2   // el hijo derecho del nodo que está en i
 
 ### Arbol AVL
 
-Los árboles AVL (por sus inventores  Georgy Adelson-Velsky y Evgenii Landis) es un árbol binario de búsqueda, pero que mantiene todo el tiempo al árbol _balanceado_. Básicamente lo que hace es, cada vez que se inserta o saca un nodo controla que todos los nodos estén balanceados. Y si no lo están reacomoda el árbol de tal forma que queden balanceados.
+Los árboles AVL (por sus inventores Georgy Adelson-Velsky y Evgenii Landis) es un árbol binario de búsqueda, pero que mantiene todo el tiempo al árbol _balanceado_. Básicamente lo que hace es, cada vez que se inserta o saca un nodo controla que todos los nodos estén balanceados. Y si no lo están reacomoda el árbol de tal forma que queden balanceados.
 
 ![avl](../_src/assets/04-EstructuraDeDatos-I/avl.gif)
 
-Lo malo de este árbol, es que las operaciones de insertar y sacar son muchos más caras que las de cualquier otra estructura. Pero nos da la posibilidad de estar __seguros__ que nunca vamos a tardar más de log n pasos en buscar un elemento. Según la naturaleza del problema que tengamos, nos va a convenir este método o no.
+Lo malo de este árbol, es que las operaciones de insertar y sacar son muchos más caras que las de cualquier otra estructura. Pero nos da la posibilidad de estar **seguros** que nunca vamos a tardar más de log n pasos en buscar un elemento. Según la naturaleza del problema que tengamos, nos va a convenir este método o no.
 
 ## Heap
 
@@ -104,18 +104,18 @@ Felicitaciones! has terminado la saga de estructura de datos (I - La amenaza rec
 
 Les dejo una tablita con ventajas y desventajas de las estructuras que hemos visto, para saber cuando utilizarlas y cuando no.
 
-| Estuctura            | Ventajas      | Desventajas  |
-| -------------------- |:-------------:| ------------:|
-| Arreglo      | Rápida inserción, acceso muy rápido si conocemos el index. | Búsqueda Lenta, borrado lento. |
-| Arreglo Ordenado      | Mejor búsqueda que el arreglo normal |   idem arreglo |
-| Pila | Asegura LIFO      |   Acceso lento a los demás items |
-| Cola | Asegura FIFO      |   Acceso lento a los demás items |
-| Lista Enlazada | Rápida inserción, rapido borrado     |    Búsqueda Lenta |
-| Árbol Binario | Muy rápido si está balanceado | Algoritmo de borrar es complejo, hay que balancear |
-| Árbol Red-black | Rápido y siempre está balanceado      |    Es Complejo |
-| Árbol 2-3-4 | Muy bueno para guardar datos  |   Es Complejo |
-| Hash | Muy rápido si conocemos el key. Insercion rapida | Borrado lento, buscado lento, consume mucha memoria    |
-| Heap | Rápida inserción, borrado y acceso al item mas grande |  Acceso lento a los demás items |
+| Estuctura        |                          Ventajas                          |                                         Desventajas |
+| ---------------- | :--------------------------------------------------------: | --------------------------------------------------: |
+| Arreglo          | Rápida inserción, acceso muy rápido si conocemos el index. |                      Búsqueda Lenta, borrado lento. |
+| Arreglo Ordenado |            Mejor búsqueda que el arreglo normal            |                                        idem arreglo |
+| Pila             |                        Asegura LIFO                        |                      Acceso lento a los demás items |
+| Cola             |                        Asegura FIFO                        |                      Acceso lento a los demás items |
+| Lista Enlazada   |              Rápida inserción, rapido borrado              |                                      Búsqueda Lenta |
+| Árbol Binario    |               Muy rápido si está balanceado                |  Algoritmo de borrar es complejo, hay que balancear |
+| Árbol Red-black  |              Rápido y siempre está balanceado              |                                         Es Complejo |
+| Árbol 2-3-4      |                Muy bueno para guardar datos                |                                         Es Complejo |
+| Hash             |      Muy rápido si conocemos el key. Insercion rapida      | Borrado lento, buscado lento, consume mucha memoria |
+| Heap             |   Rápida inserción, borrado y acceso al item mas grande    |                      Acceso lento a los demás items |
 
 ## Homework
 
